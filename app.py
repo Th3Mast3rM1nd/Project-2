@@ -9,7 +9,7 @@ def main():
     
     def start_menu():
         # we print the Menu to the User
-        print("----MENU----\n\n")
+        print("-----------MENU-----------\n\n")
         print("Here are your Choices:")
         print("\t1) Display Team Stats")
         print("\t2) Quit\n")
@@ -198,9 +198,10 @@ def main():
             balanced_teams = balance_teams(TEAMS)
             # Assigning the return of the Function display_menu() to chosen_team
             chosen_team = display_menu(number)
+            print("\n")
             # Printing The Stats of the Team The User chose
             print(f"Team: {TEAMS[chosen_team-1]} Stats ")
-            print("-----------------------------------")
+            print("----------------------")
             # Team stats Function Return A tuple with 5 index.
             # Index 0 is the Total Players.
             print(f"Total Players: {team_stats(chosen_team)[0]}")
@@ -215,11 +216,11 @@ def main():
             for player in team_stats(chosen_team)[4]:
                 print(player, end=", ")
             print("\n")
-            print(f"Guardians: ")
+            print(f"Guardians: \n")
             # Index 4 is List of Guardians.
-            for guardian in team_stats(chosen_team)[5]:
-                for i in guardian:
-                    print(i, end=", ")
+            for guardians in team_stats(chosen_team)[5]:
+                for guardian in guardians:
+                    print(guardian, end=", ")
             print("\n")
         
     
