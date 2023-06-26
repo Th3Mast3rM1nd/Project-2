@@ -10,15 +10,16 @@ def main():
     def start_menu():
         # we print the Menu to the User
         print("-----------MENU-----------\n\n")
-        print("Here are your Choices:")
+        print("Here are your Choices:\n")
         print("\t1) Display Team Stats")
         print("\t2) Quit\n")
-    
+
         flag = 0
         while (flag == 0):
             try:
                 # Asking The User to Enter a number from The Menu
                 choice = int(input("Enter an option > "))
+                print("\n")
                 try:
                     if ( choice < 1 or choice > 2):
                         # rasing an Exception if The User Enter Invalid Number 
@@ -38,7 +39,7 @@ def main():
         # Display the Menu the User and Ask The user to Enter a Number
         for index,team in enumerate(TEAMS):
             print(f"\t{index+1}) {team}")
-
+        print("\n")
         flag = 0
         while (flag == 0):
             try:
