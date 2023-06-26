@@ -35,10 +35,10 @@ def main():
 
 
     def display_menu(number):
-        # Display the Menu the User and Ask The user to Enter a Number 
-        print("\t1) Panthers")
-        print("\t2) Bandits")
-        print("\t3) Warriors\n")
+        # Display the Menu the User and Ask The user to Enter a Number
+        for index,team in enumerate(TEAMS):
+            print(f"\t{index+1}) {team}")
+
         flag = 0
         while (flag == 0):
             try:
@@ -114,8 +114,10 @@ def main():
                     # Adding the name key and the value to new Dictionary  
                     players_new[key] = value
                 if key == 'guardians':
-                    # splitting up the guardian string into a List if there is "and", and saving in in the new Collection 
-                    players_new[key] = value.rsplit("and")
+                    # splitting up the guardian string into a List if there is "and", and saving in in the new Collection
+                    guardian = value.rsplit('and')
+                    guardian = [x.strip() for x in guardian]
+                    players_new[key] = guardian
                 if key == 'experience':
                     if value == 'YES':
                         # if Value of the experience is Yes we convert it to Bool Value True and add it to the new Collection 
@@ -222,8 +224,6 @@ def main():
                 for guardian in guardians:
                     print(guardian, end=", ")
             print("\n")
-        
-    
     
 
 if "__main__" == __name__:
